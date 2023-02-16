@@ -1,0 +1,1633 @@
+:: StoryTitle
+Common Ground Template
+
+
+:: StoryData
+{
+	"ifid": "F9E39354-F641-4070-8B45-C310A3FDC8C1",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "enter",
+	"zoom": 1
+}
+
+
+:: Story Stylesheet [stylesheet]
+
+/* GENERAL STYLES */
+
+@font-face {
+    font-family: "Arcon";
+    src: url("./assets/fonts/arcon/Arcon-Regular.otf");
+}
+@font-face {
+    font-family: "SpecialElite";
+    src: url("./assets/fonts/special-elite/SpecialElite.ttf");
+}
+
+:root {
+--purple:#2b227b
+}
+
+body {
+	background-color: var(--purple);
+	font-family: "Arcon", monospace;
+	font-size: 10px;
+	min-height: 100vh;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+
+body[data-tags~="t8n-dissolve"] .transition-in {
+  position: absolute;
+  opacity: 0;
+}
+body[data-tags~="t8n-dissolve"] .passage {
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+body[data-tags~="t8n-dissolve"] .transition-out {
+  position: absolute;
+  opacity: 0;
+}
+
+a {
+  color: #f2647d;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+#passages {
+	max-width: 100%;
+	font-size: 1.3rem;
+}
+
+#story {
+	margin: 0
+}
+
+
+main{
+	padding: 5vw;
+    width: 85vw;
+    /* margin-botton: 6rem */
+}
+
+.main-section{
+    background:var(--purple);
+}
+
+p{
+  text-align:center
+}
+
+footer{
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  padding: 3rem
+}
+
+h1, h2, h3 {
+  margin:0
+}
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#cf1b98;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+
+.css-input.code-input > input[type="text"] {
+  min-width: 14rem
+}
+
+
+
+
+/* MOBILE  */
+
+@media screen and (max-width: 700px) {
+	#passages {
+height: 100%;
+overflow: scroll;
+	font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#story {
+height: 100%
+}
+
+#passage-prestart{
+	height: 100%
+}
+
+main {
+	height: 100%;
+	padding: 5vw;
+  
+}
+.wrapper{
+  margin-bottom: 5rem
+}
+
+a:active {
+  background-color: #f2647d;
+}
+
+input[type=text] {
+    min-width: 6rem;
+    max-width: 70%
+ 
+}
+div#options{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1rem
+}
+
+footer {
+  padding: 1rem;
+  font-size: 1rem
+}
+
+img.circle{
+  max-width: 100%;
+  margin-block-end:2rem
+}
+
+}
+
+/* LANDING PAGE */
+
+.center{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+    color: white;
+    margin-top:0
+}
+
+.landing > h1 {
+	font-weight: 500;
+  text-transform: uppercase;
+}
+
+#resultbutton > button {
+	background-color:#000;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+
+.landing > button:hover {
+	background-color:#f2647d;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+.title{
+font-weight: 100;
+font-size: 3rem;
+}
+
+.story-title{
+font-weight: 100;
+font-size: 1.6rem;
+}
+
+.logo{
+    max-width: 40%;
+}
+
+@media screen and (max-width: 700px) {
+.title {
+font-weight: 100;
+font-size: 3rem;
+}
+
+.logo{
+    max-width: 90%;
+}
+}
+
+/* ENTER CODE  */
+.css-input.code-input{
+  margin-block-end: 2rem;
+
+}
+
+.result-button-wrapper{
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center
+}
+
+/* DIRECTIONS */
+
+h1.treename {
+  text-transform: uppercase
+}
+
+/* ANIMATION */
+
+.coneylogoglitch{
+	/* position:absolute;
+    width: 529px; */
+  opacity: 0.85;
+	transform:translate(80px, 0px);
+	 animation: 1s logoglitch linear infinite both;
+}
+
+@keyframes logoglitch {
+  0% 		{width:590px;transform:translate(60px, 40px)}
+  49.999%	{width:590px;transform:translate(60px, 40px)}
+  50%		{width:300px;transform:translate(500px, 0px)}
+  54.999%	{width:300px;transform:translate(500px, 0px)}
+  55%		{width:590px;transform:translate(60px, 40px)}
+  94.999%	{width:590px;transform:translate(60px, 40px)}
+  95%		{width:300px;transform:translate(500px, 0px)}
+  99.999%	{width:300px;transform:translate(500px, 0px)}
+  100%		{width:590px;transform:translate(60px, 40px)}
+}
+
+.glitch-shape1{    
+  background-color: cyan;
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape1 steps(5, start) infinite forwards;
+}
+.glitch-shape2{    
+  background-color: rgb(0, 204, 51);
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape2 steps(5, start) infinite forwards reverse;
+}
+.glitch-shape3{    
+  background-color: cyan;
+  position:absolute;
+  width: 979px;
+  height: 24px;
+  opacity: 0.85;
+  animation: 1s glitchshape3 linear infinite forwards;
+}
+.glitch-shape4{    
+  background-color: blue;
+  position:absolute;
+  width: 2000px;
+  height: 40px;
+  transform:translate(-100px, 30px);
+}
+.glitch-shape5{    
+  background-color: black;
+  position:absolute;
+  width: 525px;
+  height: 92px;
+  transform:translate(20px, 500px);
+}
+
+@keyframes glitchshape1 {
+  0% 	{background-color:#70fdee; width:1000px;height:300px;transform:translate(690px, 49px)}
+  25%	{background-color: #cb3d24; width:540px;height:1049px;transform:translate(-355px, -1380px)}
+  50%	{background-color: #1abf35; width:68px;height:456px;transform:translate(880px, 936px)}
+  75%	{background-color: #f2952c; width:1078px;height:366px;transform:translate(314px, -330px)}
+  100%	{background-color: #3a9e8d; width:816px;height:1196px;transform:translate(-1020px,
+361px)}
+}
+
+@keyframes glitchshape2 {
+  0% 	{background-color: #5059ab; width:663px;height:1199px;transform:translate(489px,207px)}
+  25%	{background-color: #dc1b02; width:1220px;height:300px;transform:translate(-95px, 345px)}
+  50%	{background-color: #ef2556; width:723px;height:938px;transform:translate(1195px, 614px)}
+  75%	{background-color: #e3bcc0; width:1238px;height:508px;transform:translate(1200px, -106px)}
+  100%	{background-color: #f266a4; width:68px;height:456px;transform:translate(-20px, 669px)}
+}
+@keyframes glitchshape3 {
+  0% 	{transform:translate(900px, 800px)}
+  100%	{transform:translate(1000px,800px)}
+}
+
+.filmgrain{
+    position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  z-index: -1;
+  background: transparent url("https://youhavefoundconey.net/CG/what/assets/img/filmgrain.gif") 0 0;
+  background-size: 1000px;
+  opacity: 0.25;
+  overflow: hidden
+}
+
+.imgfadeout{
+	animation: 6.5s imgfadeout ease 1 forwards;
+}
+
+@keyframes imgfadeout {
+  0% 	{ opacity: 1; }
+  100%	{ opacity: 0; }
+}
+
+@keyframes bgfadeout {
+  0% 	{ background-color: rgba(255, 255, 255, 1) }
+  100%	{ background-color: rgba(255, 255, 255, 0) }
+}
+
+@keyframes bgfadein {
+  0% 	{ background-color: rgba(255, 255, 255, 0) }
+  100%	{ background-color: rgba(255, 255, 255, 1) }
+}
+
+.whitebgfadein{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: 1;
+  animation: 6.5s bgfadein ease 1 forwards;
+}
+
+.whitebgfadeout{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: 1;
+  animation: 6.5s bgfadeout ease 1 forwards;
+}
+
+
+.filmgrain{
+    position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  z-index: -1;
+  background: transparent url(https://youhavefoundconey.net/CG/what/assets/img/filmgrain.gif) 0 0;
+  background-size: 1000px;
+  opacity: 0.25;
+  overflow: hidden
+}
+
+.glitch-shape1{    
+  background-color: cyan;
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape1 steps(5, start) infinite forwards;
+}
+.glitch-shape2{    
+  background-color: rgb(0, 204, 51);
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape2 steps(5, start) infinite forwards reverse;
+}
+.glitch-shape3{    
+  background-color: cyan;
+  position:absolute;
+  width: 979px;
+  height: 24px;
+  opacity: 0.85;
+  animation: 1s glitchshape3 linear infinite forwards;
+}
+.glitch-shape4{    
+  background-color: blue;
+  position:absolute;
+  width: 2000px;
+  height: 40px;
+  transform:translate(-100px, 30px);
+}
+.glitch-shape5{    
+  background-color: black;
+  position:absolute;
+  width: 525px;
+  height: 92px;
+  transform:translate(20px, 500px);
+}
+
+@keyframes bgglitch {
+  0% 	{transform:translate(0px, 0px)}
+  100%	{transform:translate(-20px,20px)}
+}
+
+@keyframes logoglitch {
+  0% 		{width:590px;transform:translate(60px, 40px)}
+  49.999%	{width:590px;transform:translate(60px, 40px)}
+  50%		{width:300px;transform:translate(500px, 0px)}
+  54.999%	{width:300px;transform:translate(500px, 0px)}
+  55%		{width:590px;transform:translate(60px, 40px)}
+  94.999%	{width:590px;transform:translate(60px, 40px)}
+  95%		{width:300px;transform:translate(500px, 0px)}
+  99.999%	{width:300px;transform:translate(500px, 0px)}
+  100%		{width:590px;transform:translate(60px, 40px)}
+}
+
+@keyframes glitchshape1 {
+  0% 	{background-color:#70fdee; width:1000px;height:300px;transform:translate(690px, 49px)}
+  25%	{background-color: #cb3d24; width:540px;height:1049px;transform:translate(-355px, -1380px)}
+  50%	{background-color: #1abf35; width:68px;height:456px;transform:translate(880px, 936px)}
+  75%	{background-color: #f2952c; width:1078px;height:366px;transform:translate(314px, -330px)}
+  100%	{background-color: #3a9e8d; width:816px;height:1196px;transform:translate(-1020px,
+361px)}
+}
+
+@keyframes glitchshape2 {
+  0% 	{background-color: #5059ab; width:663px;height:1199px;transform:translate(489px,207px)}
+  25%	{background-color: #dc1b02; width:1220px;height:300px;transform:translate(-95px, 345px)}
+  50%	{background-color: #ef2556; width:723px;height:938px;transform:translate(1195px, 614px)}
+  75%	{background-color: #e3bcc0; width:1238px;height:508px;transform:translate(1200px, -106px)}
+  100%	{background-color: #f266a4; width:68px;height:456px;transform:translate(-20px, 669px)}
+}
+@keyframes glitchshape3 {
+  0% 	{transform:translate(900px, 800px)}
+  100%	{transform:translate(1000px,800px)}
+}
+
+.logoToGlitch {
+  width: 9rem;
+}
+
+/* //////// */
+
+input[type="text"] {
+  text-align: center;
+ 	color: black;
+	background-color: white;
+}
+input[type="text"]:hover {
+  text-align: center;
+	color: white;	
+  	background-color: black;
+}
+input[type="text"]:focus{
+  text-align: center;
+	color: white;	
+  	background-color: black;
+}
+
+.biginput input[type="text"] {
+  text-align: center;
+ 	color: #9900ff;
+  background-color: black;
+  font-size: 35px;
+}
+.biginput input[type="text"]:hover {
+  text-align: center;
+	color: black;	
+  	background-color: #9900ff;
+  font-size: 35px;
+}
+.biginput input[type="text"]:focus{
+  text-align: center;
+	color: #9900ff;	
+  	background-color: black;
+  font-size: 35px;
+}
+
+@keyframes bgfadein {
+  0% 	{ background-color: rgba(255, 255, 255, 0) }
+  100%	{ background-color: rgba(255, 255, 255, 1) }
+}
+
+@keyframes bgfadeout {
+  0% 	{ background-color: rgba(255, 255, 255, 1) }
+  100%	{ background-color: rgba(255, 255, 255, 0) }
+}
+
+.imgfadein{
+	animation: 6.5s imgfadein ease 1 forwards;
+}
+
+.imgfadeout{
+	animation: 6.5s imgfadeout ease 1 forwards;
+}
+
+.imgfadeinfast{
+	animation: 2s imgfadein ease 1 forwards;
+}
+
+.imgfadeoutfast{
+	animation: 2s imgfadeout ease 1 forwards;
+}
+
+.imgfadeinhalf{
+      position:absolute;
+  	top: 50%;
+   left: 50%;
+   width: 750px;
+   height: 750px;
+   margin-top: -375px; /* Half the height */
+   margin-left: -375px; /* Half the width */
+  filter: brightness(27%);
+   	z-index: -1;
+	animation: 2s imgfadeinhalf ease 1 both;
+}
+
+.imgfadeouthalf{
+      position:absolute;
+  	top: 50%;
+   left: 50%;
+   width: 750px;
+   height: 750px;
+   margin-top: -375px; /* Half the height */
+   margin-left: -375px; /* Half the width */
+  filter: brightness(100%);
+   	z-index: -1;
+	animation: 2s imgfadeouthalf ease 1 both;
+}
+
+
+@keyframes imgfadein {
+  0% 	{ opacity: 0; }
+  100%	{ opacity: 1; }
+}
+
+@keyframes imgfadeout {
+  0% 	{ opacity: 1; }
+  100%	{ opacity: 0; }
+}
+
+@keyframes imgfadeinhalf {
+  0% 	{ filter: brightness(27%); }
+  100%	{ filter: brightness(100%); }
+}
+@keyframes imgfadeouthalf {
+  0% 	{ filter: brightness(100%); }
+  100%	{ filter: brightness(27%); }
+}
+
+
+.noise {
+  position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  z-index: 10;
+  background: transparent url(https://youhavefoundconey.net/CG/what/assets/img/noise.png) 0 0;
+  background-size: 320px 320px;
+	opacity: .75;
+	animation: noise 1s steps(8,end) infinite both;
+}
+
+@keyframes noise {
+  0% {
+    transform: translateX(0px,0px); }
+  10% {
+    transform: translate(-100px, 100px);
+  }
+  20% {
+    transform: translate(150px, -100px);
+  }
+  30% {
+    transform: translate(-100px,100px);
+  }
+  40% {
+    transform: translate(100px, -150px);
+  }
+  50% {
+    transform: translate(-100px, 200px);
+  }
+  60% {
+    transform: translate(-200px, -100px);
+  }
+  70% {
+    transform: translateY(50px, 100px);
+  }
+  80% {
+    transform: translate(100px, -150px);
+  }
+  90% {
+    transform: translate(0px, 200px);
+  }
+  100% {
+    transform: translate(-100px, 100px);
+  }
+}
+
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+:: StoryInit
+<<cacheaudio "Amber1" "https://youhavefoundconey.net/trees/assets/audio/Amber1.mp3">>
+<<cacheaudio "Amber2" "https://youhavefoundconey.net/trees/assets/audio/Amber2.mp3">>
+<<cacheaudio "Amber3" "https://youhavefoundconey.net/trees/assets/audio/Amber3.mp3">>
+<<cacheaudio "Amber4" "https://youhavefoundconey.net/trees/assets/audio/Amber4.mp3">>
+<<cacheaudio "Amber5" "https://youhavefoundconey.net/trees/assets/audio/Amber5.mp3">>
+<<cacheaudio "Bloudinford1" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford1.mp3">>
+<<cacheaudio "Bloudinford2" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford2.mp3">>
+<<cacheaudio "Bloudinford3" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford3.mp3">>
+<<cacheaudio "Bloudinford4" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford4.mp3">>
+<<cacheaudio "Bloudinford5" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford5.mp3">>
+<<cacheaudio "Bloudinford6" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford6.mp3">>
+<<cacheaudio "Bloudinfordcorrect" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford6.mp3">>
+<<cacheaudio "Bloudinfordtryagain" "https://youhavefoundconey.net/trees/assets/audio/Bloudinford6.mp3">>
+<<cacheaudio "Max1" "https://youhavefoundconey.net/trees/assets/audio/Max1.mp3">>
+<<cacheaudio "Max2" "https://youhavefoundconey.net/trees/assets/audio/Max2.mp3">>
+<<cacheaudio "Rocky1" "https://youhavefoundconey.net/trees/assets/audio/Rocky1.mp3">>
+<<cacheaudio "Rocky2" "https://youhavefoundconey.net/trees/assets/audio/Rocky2.mp3">>
+<<cacheaudio "Siben1" "https://youhavefoundconey.net/trees/assets/audio/Siben1.mp3">>
+<<cacheaudio "Siben2" "https://youhavefoundconey.net/trees/assets/audio/Siben2.mp3">>
+<<cacheaudio "Finale" "https://youhavefoundconey.net/trees/assets/audio/Finale.mp3">>
+<<cacheaudio "LevelUp" "https://youhavefoundconey.net/trees/assets/audio/LevelUp.mp3">>
+<<waitforaudio>>
+
+:: footer
+<footer><nav class="right"><div id="back"><<back>></div></nav></footer>
+
+:: preglitch
+<iframe id="iframeAudio" src="https://youhavefoundconey.net/CG/assets/audio/static.mp3" style="display:none" allow="autoplay" ></iframe>
+<div class="filmgrain"></div>
+<div class="glitch-shape1"></div>
+<div class="glitch-shape2"></div>
+<div class="glitch-shape3"></div>
+<<timed 12s>>
+<<goto "1">>
+<</timed>>
+
+
+:: enter [nobr]{"position":"425,200","size":"100,100"} 
+<<set $treecount to 0>><div class="wrapper">
+  <main class="main-section center">
+  
+  <img src="./assets/img/Circ.gif" class="circle">
+  
+  <h1>Tree Listener</h1>
+  
+  [[Enter | treecode]]
+  </main>
+</div>
+
+:: treecode [nobr]{"position":"425,200","size":"100,100"} 
+<div class="wrapper">
+  <main class="main-section center">
+  <img src="./assets/img/Circ.gif" class="circle">
+  
+  <h2>Enter Tree Code</h2>
+  <div id="coderesult"></div>
+   /% CODEWORD FEEDBACK %/
+  <div id="resultbutton" class="result-button-wrapper">
+      /% CODEWORD INPUT %/
+      <div class="css-input code-input ">
+        <<textbox "$treecode" "">>
+      </div>
+      <<button "Enter">>
+        /% CODEWORD CLEANUP %/
+        <<set $treecode to $treecode.toUpperCase()>>
+        /% CODEWORD CORRECT %/
+          <<if $treecode isnot "" and $treecode is "ROCKY">>
+          <<set $tree to "rocky">>
+        <<timed 3s>><<goto "directionsToTree">><</timed>>
+        <</if>>
+        <<if $treecode isnot "" and $treecode is "BLOUNDINFORD">>
+        <<set $tree to "bloudinford">>
+       <<timed 3s>><<goto "directionsToTree">><</timed>>
+        <</if>>
+        <<if $treecode isnot "" and $treecode is "SIBEN">>
+        <<set $tree to "siben">>
+       <<timed 3s>><<goto "directionsToTree">><</timed>>
+        <</if>>
+        <<if $treecode isnot "" and $treecode is "AMBER">>
+        <<set $tree to "amber">>
+         <<timed 3s>><<goto "directionsToTree">><</timed>>
+        <</if>>
+        <<if $treecode isnot "" and $treecode is "MAX">>
+        <<set $tree to "max">>
+  <<timed 3s>><<goto "directionsToTree">><</timed>>
+        <</if>>
+  
+       
+       
+      <</button>>
+  </div>
+  </main>
+</div>
+
+:: directionsToTree [nobr]
+<div class="wrapper">
+<main class="main-section center">
+
+    <p>Head to</p>
+    <h1 class="treename">$tree</h1>
+    <p>The Demdrologistant will know the area to find it</p>
+
+    <<button "I'm there">>
+      <<goto $tree>>
+    <</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+
+:: directionsToOH [nobr]
+<<audio ":all" stop>><<audio  "LevelUp" play>>
+<div class="wrapper">
+<main class="main-section center">
+ <img src="./assets/img/Circlevelup.gif" class="circle">
+    <<timed 6s>><p>Head back to</p>
+    <h1 class="treename">Oxford House</h1>
+    <p>The 9 signals have been collected. You have permission to enter my Field Lab. </p>
+ <</timed>>
+</main>
+<<include "footer">>
+</div>
+
+
+:: siben [ nobr]
+<div class="wrapper">
+<main class="main-section center">
+<h2>Siben</h2>
+  <img src="./assets/img/Circlevelup.gif" class="circle">
+<p id="coderesult">What colour is the tree?</p>
+
+    /% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "WHITE">>
+      <<timed 1s>>
+       <<goto [[sibentalk]]>>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "WHITE">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>What colour is the tree?<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+
+
+:: sibentalk [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Siben1" play>><<set $treecount += 1>><div class="wrapper">
+<main class="main-section center">
+<h2>Siben</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+A - are you hearing me? 
+B - How are you hearing me? 
+
+A – are they hearing you?
+B – they are hearing me. 
+
+A – Right, My name is Siben 
+B – Mine too – we are the same. 
+
+A - totally not strange 
+B – Tell them how long we’ve been here. 
+
+A – a few 18 years. 
+B – Wait how did you learn our tree language!? 
+
+A – Ah the thing in your hand. 
+B – You must be looking for the signals. 
+
+A – Well, let me tell you a bit about me first.  
+B - The first time I saw the world, children playing in the park next to the baby park. This made me very happy, but I also felt loneliness because I didn’t know anyone. 
+
+A - I never knew about roots until I found mine, I was amazed. I connected my roots to the other trees. I didn’t understand at first, but I slowly did. I became happier whenever connected to the other roots. 
+B – We are stronger together. 
+
+A – Now I’m connected to trees all over the place
+B – There is Jafar, Jenkins, John, Jailesh & Jivin. 
+A – And that is just the ones who start with a J. 
+
+A – I’ve always wanted to speak to humans to tell you one thing
+B – Imagine if you were a tree and someone cut you down – our connection stops – it’s sad when it is done for no reason. 
+
+A – Planting a new one isn’t the same as the old trees – they need to start their connections from the start. It takes time to connect. We are a Mother Tree – like the Pando Tree in X. 
+
+A – I want you to be our friends. 
+B – Me too. 
+
+A – Let’s give them the signal
+B – But only if they keep us in their minds
+
+A – A rubbing?
+B – Good idea
+
+A – If you take a rubbing of me
+B – Or me. 
+
+A – We will give you the code. 
+B – When you have done the rubbing text RUBBING. 
+
+<div id="coderesult"></div>
+/% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "RUBBING">>
+      <<timed 1s>>
+       <<goto "sibentalk2">>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "RUBBING">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>Enter codeword:<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: sibentalk2 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Siben2" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Siben</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+
+<p>  Keep this safe with you</p>  
+
+<p>If you are ever feeling lonely, reach out to others. </p>
+
+<p>I’ll send you the signal!</p>
+
+ <<button "Next">>
+<<if $treecount < 2>>
+     <<goto "levelup">>
+  <<elseif $treecount == 2>>
+       <<goto "directionsToOH">>
+    <</if>>
+  <</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: rocky [ nobr]
+
+<div class="wrapper">
+<main class="main-section center">
+<h2>Rocky</h2>
+<img src="./assets/img/Circlevelup.gif" class="circle">
+<p id="coderesult">What colour is the tree?</p>
+
+    /% PASSWORD FEEDBACK %/
+             <div id="resultbutton"> 
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>  </div>  
+          <<button "Enter">>
+ 
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "ORANGE">>
+      <<timed 1s>>
+       <<goto [[rockytalk]]>>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "ORANGE">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>What colour is the tree?<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: rockytalk [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio  "Rocky1" play>> <<set $treecount += 1>>
+<div class="wrapper ">
+<main class="main-section center">
+<h2>Rocky</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>Just passing nutrients to you and to you and to you and to you and….</p>
+
+<p>Wo - How come people understand me? </p>
+
+<p>Oh, you can understand me!? </p>
+
+<p>You must have followed the signals. </p>
+
+<p>Finally, I can speak to people!</p>
+
+<p>I love company – never had the chance to speak to humans before.</p> 
+
+<p>I thought a man heard me crying once…but that was so long ago. </p>
+
+<p>I’ve been here a long time you see – seen life come and go. </p>
+
+<p>In Weaver's Field, some trees need help, so I give them nutrients through my roots.</p>
+
+<p>I love seeing children playing on the zipline and overcoming their fears. </p>
+
+<p>Lots of people climb on me - children, squirrels and even Gandhi once! </p>
+
+<p>
+  I know – The Gandhi – here in Weaver’s Fields. 
+  I’d heard about him and couldn’t believe it. 
+  I remember it as he said something I will never forget. 
+  "Be the change you wish to see in the world." 
+</p>
+
+<p>I really held onto it. </p>
+
+<p>In fact, I’d love to see what that is to you. </p>
+
+<p>Discuss as a group – what is the change you want to see in the world? Find an object or take a photo of something that represents that. I’ve seen you humans taking selfies. </p>
+
+<p>Once you have done send me your vibration with the word CHANGE</p>
+
+ <div id="coderesult"></div>
+/% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "CHANGE">>
+      <<timed 1s>>
+       <<goto "rockytalk2">>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "CHANGE">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>Enter codeword:<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+
+</main>
+</div>
+
+:: rockytalk2 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Rocky2" play>> <div class="wrapper">
+<main class="main-section center">
+
+<h2>Rocky</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>Well done, take it with you and maybe it will be useful. </p>
+
+<p>I hope you come and visit me another day. </p>
+
+<p>I’ll send you my Signal. </p>
+
+<p>Remember </p>
+<p>"Be the change you wish to see in the world." </p>
+
+
+ <<button "Next">>
+<<if $treecount < 2>>
+     <<goto "levelup">>
+  <<elseif $treecount == 2>>
+       <<goto "directionsToOH">>
+    <</if>>
+  <</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: levelup 
+<<audio ":all" stop>><<audio "LevelUp" play>>
+<div class="wrapper">
+<main class="main-section center">
+ <img src="./assets/img/Circlevelup.gif" class="circle">
+<div id="mount"></div>
+</main>
+
+<<timed 0.2s>>
+<<if $tree is "rocky">>
+  <<replace "#mount">><h1 class="signal">S M</h1><</replace>>
+    <<timed 5s>>  <<set $tree to "bloudinford">>  
+    <<goto "directionsToTree">><</timed>>
+<<elseif $tree is "siben">>
+<<replace "#mount">><h1 class="signal">Y S</h1><</replace>>
+       <<timed 5s>><<set $tree to "amber">>  
+           <<goto "directionsToTree">><</timed>>
+<<elseif $tree is "bloudinford">>
+ <<replace "#mount">><h1 class="signal">I O</h1><</replace>>
+      <<timed 5s>> <<set $tree to "siben">>  
+           <<goto "directionsToTree">><</timed>>
+ <<elseif $tree is "amber">>
+ <<replace "#mount">><h1 class="signal">B</h1><</replace>>
+      <<timed 5s>> <<set $tree to "max">>  
+           <<goto "directionsToTree">><</timed>>
+<<elseif $tree is "max">>
+ <<replace "#mount">><h1 class="signal">I S</h1><</replace>>
+            <<timed 5s>> <<set $tree to "rocky">>  
+      <<goto "directionsToTree">><</timed>>
+    <</if>>
+    <</timed>>
+
+:: bloudinford [ nobr]
+<div class="wrapper">
+<main class="main-section center">
+<h2>Bloudinford</h2>
+<img src="./assets/img/Circlevelup.gif" class="circle">
+<p id="coderesult">What colour is the tree?</p>
+
+
+    /% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "GREEN">>
+      <<timed 1s>>
+       <<goto [[bloudinfordtalk]]>>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "GREEN">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>What colour is the tree?<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: bloudinfordtalk [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Bloudinford1" play>><<set $treecount += 1>><div class="wrapper">
+<main class="main-section center">
+<h2>Bloudinford</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>
+  This is weird. What is going on? 
+  What do you want 
+  Please don't hurt me humans! 
+  My name is Bloundinford 
+</p>
+
+<p>
+  You want the signals I guess? 
+  That must be why you’ve tried to understand us. 
+  Well, you don’t just get them!
+</p>
+
+<p>Let me tell you a story. As story this could be once upon a time but was actually not that long ago…there were 5 groups of children. 5 groups from different schools. </p>
+<p>You call them schools, right? </p>
+<p>Well, these 5 schools there were here and they were playing underneath me. </p>
+<p>I love to see people playing. </p>
+<p>They played a game called umm ummm cri, cri, crick .... Cricket. And I felt flabbergasted and gobsmacked because of the way they played together. </p>
+<p>Such smiles. </p>
+<p>Such drama.</p>
+<p>Such joy. </p>
+
+<p>It was odd that they used a piece of tree to hit the ball with though! </p>
+
+<p>I love to play too. </p>
+
+<p>Playing is good for your bodies</p>
+<p>You'll get stuck like us - but we have a good spine. How is your spine?</p>
+<p>Getting out in the fresh air is good too. </p>
+<p>Green space</p>
+
+<p>In fact let's play together.</p>
+<p>I can't move so we can't Hide & Seek</p>
+<p>And I am currently playing a very slow game of IT with the tree next to me. </p>
+
+<p>But we could play riddles? I’ll give you one…and then you can get the other 2.  </p>
+
+<p>Which animals can jump higher than a tree?</p>
+<p>All of them….Trees can’t jump!</p>
+
+<p>If you get the other two right…I’ll send you a signal. </p>
+
+
+ /* <<button "Next">>
+  <<if $treecount < 2>>
+      <<set $tree to "siben">>  
+    <<goto "directionsToTree">>
+  <<elseif $treecount == 2>>
+       <<goto "directionsToOH">>
+    <</if>>
+  <</button>> */
+
+   <<button "Next">>
+<<goto "bloudinfordtalk2">>
+  <</button>>
+
+
+
+</main>
+<<include "footer">>
+</div>
+
+:: bloudinfordtalk2 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Bloudinford2" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Bloudinford</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>1. What’s the same size and shape as an Oak tree yet weighs nothing?</p>
+<p id="answer"><div id="coderesult"></div></p>
+
+
+/% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "SHADOW">>
+      <<timed 1s>>
+      <<audio ":all" stop>><<audio "Bloudinford3" play>>
+      <<replace "#answer">><p>An Oak’s shadow.</p><</replace>>
+      <</timed>>
+       <<timed 4s>>
+      <<goto "bloudinfordtalk2b">>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "SHADOW">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>Try again:<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+
+
+</main>
+<<include "footer">>
+</div>
+
+
+:: bloudinfordtalk2b [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Bloudinford4" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Bloudinford</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>2. Which side of a tree has the most leaves?</p>
+<p id="answer"><div id="coderesult"></div></p>
+/% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "OUTSIDE">>
+      <<timed 1s>>
+      <<audio ":all" stop>><<audio "Bloudinford5" play>>
+      <<replace "#answer">><p>The outside.</p><</replace>>
+      <</timed>>
+       <<timed 4s>>
+      <<if $treecount < 2>>
+    <<goto "levelup">>
+  <<elseif $treecount == 2>>
+       <<goto "directionsToOH">>
+    <</if>>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "OUTSIDE">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>Try again:<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: amber [ nobr]
+<div class="wrapper">
+<main class="main-section center">
+<h2>Amber</h2>
+<img src="./assets/img/Circlevelup.gif" class="circle">
+<p id="coderesult">What colour is the tree?</p>
+
+<div id="coderesult"></div>
+    /% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "YELLOW">>
+      <<timed 1s>>
+       <<goto [[ambertalk]]>>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "YELLOW">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>What colour is the tree?<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: ambertalk [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Amber1" play>>
+<<set $treecount += 1>><div class="wrapper">
+<main class="main-section center">
+<h2>Amber</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>Wow you can hear me, how can you hear me?? </p>
+
+<p>You must be here for the signals! </p>
+
+<p>
+  My name is amazing Amber and I'm a silver Birch tree. 
+  I’m a native Londoner and I symbolise love and growth. 
+</p>
+
+<p>Can I tell you a story? If you listen, maybe I’ll give you the signal you are looking for. </p>
+
+<p>
+  One dark day one of my dear friends became really sick. 
+  She wasn’t looking good at all! 
+</p>
+<p>
+  I tried to make her much better, so I made a deal with the fungus that grows underground between the trees and beyond. 
+  The deal was to I would give sugar to the fungi from the sunlight if they would take the needed nutrients to my friend who is in the shade. 
+</p>
+<p>
+  The sugar travels through the leaves, the trunk and to the roots and they take it to my friend. 
+  My friend is a lot better now! 
+</p>
+
+<p>I’ve heard you are looking for ways to suck out carbon from the atmosphere...looking for a magical way to do that…building machines to do it…. Which is funny because…THAT’S WHAT WE DO. </p>
+
+<p>Many years back there were many more of us, now that we are getting cut down there is fewer silver birches and so less air pollution is being sucked up by us. </p>
+
+<p>We know this because trees have a special power that means we can see air pollution! In big cities like London sometimes humans can see it too. You call it smog. Too much air pollution is not good for you, us or the environment.</p>
+
+<p>So, let’s see, should I give you the signal you are looking for.</p> 
+
+<p>Maybe I will if you tell me the answer to the questions. I hope you were listening…</p>
+
+
+   <<button "Next">>
+<<goto "ambertalk2">>
+  <</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+
+:: ambertalk2 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Amber2" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Amber</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>1.	What do Trees take in from the atmosphere?</p>
+<p id="hint"></p>
+
+<div id="options">
+<<button "Carbon">>
+<<replace "#options">>Correct, its Carbon<</replace>>
+  <<timed 4s>>
+      <<goto "ambertalk3">>
+      <</timed>><</button>>
+<<button "Oxygen">>
+<<replace "#hint">>Incorrect, try again.<</replace>>
+<<timed 3s>><<replace "#hint">><</replace>><</timed>>
+<</button>>
+<<button "Helium">>
+<<replace "#hint">>Incorrect, try again.<</replace>>
+<<timed 3s>><<replace "#hint">><</replace>><</timed>><</button>>
+</div>
+
+</main>
+<<include "footer">>
+</div>
+
+
+:: ambertalk3 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Amber3" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Amber</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>2.	What helps trees to pass on nutrients? </p>
+<p id="hint"></p>
+
+<div id="options">
+<<button "Sweets">>
+<<replace "#hint">>Incorrect, try again.<</replace>>
+<<timed 3s>><<replace "#hint">><</replace>><</timed>><</button>>
+<<button "Funghi">>
+<<replace "#options">>Correct, its Funghi<</replace>>
+  <<timed 4s>>
+      <<goto "ambertalk4">>
+      <</timed>><</button>>
+<<button "Rabbits">>
+<<replace "#hint">>Incorrect, try again.<</replace>>
+<<timed 3s>><<replace "#hint">><</replace>><</timed>><</button>>
+</div>
+
+</main>
+<<include "footer">>
+</div>
+
+:: ambertalk4 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Amber4" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Amber</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>3.	What isn’t good for us here in Tower Hamlets, especially for young people?  </p>
+<p id="hint"></p>
+
+<div id="options">
+<<button "Giraffes">>
+<<replace "#hint">>Incorrect, try again.<</replace>>
+<<timed 3s>><<replace "#hint">><</replace>><</timed>><</button>>
+<<button "Flip Flops">>
+<<replace "#hint">>Incorrect, try again.<</replace>>
+<<timed 3s>><<replace "#hint">><</replace>><</timed>><</button>>
+<<button "Air Pollution">>
+  <<replace "#options">>Correct, its Air Pollution<</replace>>
+  <<audio ":all" stop>><<audio "Amber5" play>>
+    <<timed 5s>>
+      <<if $treecount < 2>>
+      <<goto "levelup">>
+    <<elseif $treecount == 2>>
+        <<goto "directionsToOH">>
+      <</if>>
+        <</timed>>
+<</button>>
+</div>
+
+</main>
+<<include "footer">>
+</div>
+
+:: max [ nobr]
+<div class="wrapper">
+<main class="main-section center">
+<h2>Max</h2>
+  <img src="./assets/img/Circlevelup.gif" class="circle" >
+<p id="coderesult">What colour is the tree?</p>
+
+
+    /% PASSWORD FEEDBACK %/
+             <div id="resultbutton"></div>    
+          /% PASSWORD INPUT %/
+          <div class="css-input code-input">
+          <<textbox "$codeword" "">></div>
+          <<button "Enter">>
+  
+      /% PASSWORD CODE %/
+       <<set $codeword to $codeword.toUpperCase()>>
+      /% PASSWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "BLUE">>
+      <<timed 1s>>
+       <<goto [[maxtalk]]>>
+      <</timed>>
+      <</if>>
+      /% PASSWORD INCORRECT %/
+      <<if $codeword isnot "" and $codeword is not "BLUE">>
+      <<replace "#coderesult">>Thats not right.<</replace>>
+      <<timed 3s>> 
+             <<replace "#coderesult">>What colour is the tree?<</replace>>
+             <</timed>>
+      <</if>><</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+:: maxtalk [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Max1" play>><<set $treecount += 1>><div class="wrapper">
+<main class="main-section center">
+<h2>Max</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>In all my years I have never seen this</p>
+<p>Who are you? How are you doing this!? </p>
+<p>Ah the signals – you must be here for them. </p>
+<p>We knew one day it would happen. </p>
+
+<p>I'm Max, many others call me Max the Mage.</p>
+
+<p>I’m a Silver Birch – the tallest in Weavers Fields I think. </p>
+
+<p>As a Silver Birch my roots run deep into the ground – so I can reach nutrients others cannot, but I share these around and improve the soil to others can grow. I take what I need and share what I do not. </p>
+
+<p>I’ve been watching for years. As humans come here to Tower Hamlets. </p>
+
+<p>I remember a time when I saw a boy who fell off his bike and hurt his leg, he started crying but then his parents helped him. His parents sat down next to him and began to rub his back until he calmed down. It was really powerful. </p>
+
+<p>It made me realise we aren’t too different you and I. </p>
+<p>-	Yes I am a lot taller than you! </p>
+<p>-	And my leaves are nicer than yours</p>
+
+<p>But we are similar. </p>
+
+<p>Humans need to be compassionate to others as I have been, but also to themselves.</p>
+
+<p>So, I will give you the signals I possess if you can show your kindness and compassion.  </p>
+
+<p>Your challenge is that you have 60 seconds to say hello and something nice to as many trees as you can – say hello to my friends! </p>
+
+<p>Ready – 3 – 2 – 1 GOOOOO. </p>
+
+<<button "I've done it!">>
+  <<if $treecount < 2>>
+      <<goto "maxtalk2">>
+    <<elseif $treecount == 2>>
+        <<goto "directionsToOH">>
+      <</if>>
+    <</button>>
+
+ <<timed 180s>>
+  <<if $treecount < 2>>
+    <<goto "maxtalk2">>
+  <<elseif $treecount == 2>>
+       <<goto "directionsToOH">>
+    <</if>>
+  <</timed>>
+
+</main>
+<<include "footer">>
+</div>
+
+
+:: maxtalk2 [ nobr]{"position":"425,200","size":"100,100"} 
+<<audio ":all" stop>><<audio "Max2" play>><div class="wrapper">
+<main class="main-section center">
+
+<h2>Max</h2>
+  <img src="./assets/img/Circ.gif" class="circle">
+<p>Well done!</p>
+
+<p>For the second signal though you need to do something harder… </p>
+
+<p>I have seen many trees fall in my time. </p>
+
+<p>But when they fall, we make space for new trees. </p>
+
+<p>We appreciate our time here. </p>
+
+<p>So, for you your second signal…you need to be kind to yourself. </p>
+
+<p>Give yourself a compliment</p>
+
+<p>What are you TREE-rific at? See what I did there! </p>
+
+<p>Then I will send you a second signal! </p>
+
+
+ <<button "Next">>
+<<if $treecount < 2>>
+     <<goto "levelup">>
+  <<elseif $treecount == 2>>
+       <<goto "directionsToOH">>
+    <</if>>
+  <</button>>
+
+</main>
+<<include "footer">>
+</div>
+
+
+
+
+
